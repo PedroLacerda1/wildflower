@@ -1,0 +1,736 @@
+/* Estilo Neoclássico Francês - Desktop Only */
+:root {
+    --rosa-claro: #f8e1e7;
+    --rosa-poetique: #e7c9d1;
+    --rosa-sophistique: #d9a5b3;
+    --vert-jardin: #d8e7d5;
+    --vert-veronese: #b8d3b7;
+    --vert-botte: #8ab38e;
+    --dorado: #d4af37;
+    --creme: #f9f5f0;
+    --texto-suave: #5a5353;
+  }
+  
+  /* Base Estilizada */
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--creme);
+    color: var(--texto-suave);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  
+  /* Estrutura Principal */
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+  }
+  
+  /* Products Page - Desktop */
+  .products-page {
+    padding: 3rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .products-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .products-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .page-subtitle {
+    font-size: 1.2rem;
+    color: var(--texto-suave);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Filtro de Categoria */
+  .category-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  
+  .category-filter label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+  }
+  
+  .category-filter select {
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid var(--rosa-poetique);
+    background-color: white;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--texto-suave);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 250px;
+  }
+  
+  .category-filter select:focus {
+    outline: none;
+    border-color: var(--vert-botte);
+    box-shadow: 0 0 0 2px rgba(138, 179, 142, 0.2);
+  }
+  
+  /* Grid de Produtos */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  
+  /* Card de Produto */
+  .product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    border: 1px solid var(--rosa-poetique);
+    position: relative;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  }
+  
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--rosa-claro), var(--vert-jardin));
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--rosa-poetique);
+  }
+  
+  .product-info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 320px);
+    box-sizing: border-box;
+  }
+  
+  .product-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  
+  .product-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--vert-botte);
+    margin: 0.5rem 0 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .product-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--texto-suave);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  /* Botão "Adicionar ao Carrinho" - Estilo Refinado */
+  .add-to-cart {
+    width: 100%;
+    background: linear-gradient(to right, var(--rosa-poetique), var(--rosa-sophistique));
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 3px 10px rgba(217, 165, 179, 0.3);
+  }
+  
+  .add-to-cart:hover {
+    background: linear-gradient(to right, var(--rosa-sophistique), var(--rosa-poetique));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(217, 165, 179, 0.4);
+  }
+  
+  .add-to-cart:active {
+    transform: translateY(0);
+  }
+  
+  /* Ícone do Botão (opcional) */
+  .add-to-cart::before {
+    content: '+';
+    font-size: 1.3rem;
+    display: inline-block;
+  }
+  
+  /* Mensagem quando não há produtos */
+  .no-products {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--rosa-claro);
+    border-radius: 10px;
+    margin-top: 2rem;
+    grid-column: 1 / -1;
+    border: 1px dashed var(--rosa-poetique);
+  }
+  
+  .no-products p {
+    font-size: 1.2rem;
+    color: var(--texto-suave);
+    font-style: italic;
+  }
+  
+  /* Carrinho (mantido para consistência) */
+  /* Carrinho de Compras - Estilo Neoclássico Francês */
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 420px;
+    height: 100vh;
+    background-color: var(--creme);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.08);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--rosa-poetique);
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .cart.open {
+    transform: translateX(0);
+  }
+  
+  .cart-header {
+    padding: 1.8rem;
+    border-bottom: 1px solid var(--rosa-poetique);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--rosa-claro);
+  }
+  
+  .cart-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .close-cart {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--texto-suave);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+  }
+  
+  .close-cart:hover {
+    color: var(--vert-botte);
+    transform: rotate(90deg);
+  }
+  
+  .cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+  }
+  
+  .cart-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rosa-poetique);
+    gap: 1.5rem;
+  }
+  
+  .cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--rosa-poetique);
+  }
+  
+  .cart-item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .cart-item-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+    margin-bottom: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .cart-item-price {
+    font-size: 1.1rem;
+    color: var(--vert-botte);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .remove-item {
+    background: none;
+    border: none;
+    color: var(--rosa-sophistique);
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  
+  .remove-item:hover {
+    color: var(--vert-botte);
+  }
+  
+  .cart-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--rosa-poetique);
+    background-color: white;
+  }
+  
+  .cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+    margin-bottom: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .checkout-button {
+    width: 100%;
+    background: linear-gradient(to right, var(--vert-botte), var(--vert-veronese));
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.5px;
+  }
+  
+  .checkout-button:hover {
+    background: linear-gradient(to right, var(--vert-veronese), var(--vert-botte));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 179, 142, 0.3);
+  }
+  
+  .checkout-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Barra de rolagem estilizada */
+  .cart-items::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .cart-items::-webkit-scrollbar-track {
+    background: var(--rosa-claro);
+  }
+  
+  .cart-items::-webkit-scrollbar-thumb {
+    background-color: var(--rosa-poetique);
+    border-radius: 3px;
+  }
+  /* styles.css - Estilo Completo Neoclássico Francês */
+
+/* Variáveis de Cor */
+:root {
+    --rosa-claro: #f8e1e7;
+    --rosa-poetique: #e7c9d1;
+    --rosa-sophistique: #d9a5b3;
+    --vert-jardin: #d8e7d5;
+    --vert-veronese: #b8d3b7;
+    --vert-botte: #8ab38e;
+    --dorado: #d4af37;
+    --creme: #f9f5f0;
+    --texto-suave: #5a5353;
+    --sombra-suave: 0 4px 15px rgba(0,0,0,0.08);
+  }
+  
+  /* Reset e Base */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--creme);
+    color: var(--texto-suave);
+    line-height: 1.8;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+  
+  /* Estrutura Principal */
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+  }
+  
+  /* HEADER - Estilo Francês Elegante */
+
+.header {
+    background-color: var(--rosa-claro);
+    padding: 1.8rem 3rem;
+    border-bottom: 1px solid var(--rosa-poetique);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--sombra-suave);
+  }
+  
+  .logo {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--texto-suave);
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    font-style: italic;
+  }
+  
+  .logo span {
+    color: var(--dorado);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2.2rem; /* Aumentei levemente o gap */
+    list-style: none;
+  }
+  
+  .nav-links a {
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--vert-botte);
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--vert-botte);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  .cart-button {
+    background-color: var(--vert-veronese);
+    color: var(--texto-suave);
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+  }
+  
+  .cart-button:hover {
+    background-color: var(--vert-botte);
+    transform: translateY(-2px);
+  }
+  
+  /* PÁGINA HOME */
+  .home-page {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .hero {
+    background: linear-gradient(rgba(248, 225, 231, 0.9), rgba(248, 225, 231, 0.9)), 
+                url('/public/images/flores.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--rosa-poetique);
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--texto-suave);
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: var(--vert-botte);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--vert-botte);
+  }
+  
+  .cta-button:hover {
+    background-color: transparent;
+    color: var(--vert-botte);
+  }
+  
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .feature {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--rosa-poetique);
+    transition: all 0.3s ease;
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-suave);
+  }
+  
+  /* PÁGINA ABOUT */
+  .about-page {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  
+  .about-page h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--texto-suave);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .about-page h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: -8px;
+    left: 0;
+    background-color: var(--vert-botte);
+  }
+  
+  /* PÁGINA CONTACT */
+  .contact-page {
+    padding: 4rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--rosa-poetique);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--rosa-poetique);
+    border-radius: 4px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .submit-button {
+    background-color: var(--vert-botte);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--vert-veronese);
+  }
+  
+  /* FOOTER - Estilo Francês */
+  .footer {
+    background-color: var(--rosa-claro);
+    color: var(--texto-suave);
+    text-align: center;
+    padding: 3rem;
+    margin-top: auto;
+    border-top: 1px solid var(--rosa-poetique);
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .social-links a {
+    color: var(--texto-suave);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: var(--vert-botte);
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  /* COMPONENTES COMUNS */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--texto-suave);
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, var(--rosa-claro), var(--vert-jardin));
+  }
+  
+  /* Efeitos de Transição */
+  a, button, .feature, .product-card {
+    transition: all 0.3s ease;
+  }
